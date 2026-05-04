@@ -8,6 +8,7 @@ This folder contains reference documentation for the DOOM source code
 | [overview.md](overview.md) | Comprehensive codebase overview: layout, technologies, subsystems, key data structures |
 | [architecture.md](architecture.md) | Technical architecture with 16 Mermaid diagrams (game loop, renderer pipeline, BSP tree, actor lifecycle, network protocol, etc.) |
 | [formal-spec.md](formal-spec.md) | Formal specification in Z++ — abstract machine spec covering memory, WAD, geometry, actors, player, renderer, and networking |
+| [hardware-analysis.md](hardware-analysis.md) | Hardware requirements (1993), concurrent instance estimates on 2026 devices, and a 30-year retrospective on what has been superseded vs. what still holds up |
 
 ## Quick Start
 
