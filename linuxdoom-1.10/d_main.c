@@ -77,6 +77,10 @@ static const char rcsid[] = "$Id: d_main.c,v 1.8 1997/02/03 22:45:09 b1 Exp $";
 
 #include "d_main.h"
 
+#ifdef DOOM_AI_PLAYER
+#include "ai_player.h"
+#endif
+
 //
 // D-DoomLoop()
 // Not a globally visible function,
@@ -1166,6 +1170,15 @@ void D_DoomMain (void)
 	    D_StartTitle ();                // start up intro loop
 
     }
+
+#ifdef DOOM_AI_PLAYER
+    // Initialize AI player if -ai command line flag is present
+    if (M_CheckParm("-ai"))
+    {
+	printf("[DOOM-AI] AI Player mode activated via -ai flag\n");
+	AI_Init(consoleplayer);
+    }
+#endif
 
     D_DoomLoop ();  // never returns
 }

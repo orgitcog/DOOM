@@ -1,0 +1,9 @@
+# Build artifacts
+linuxdoom-1.10/linux/*.o
+linuxdoom-1.10/linux/linuxxdoom
+# Python cache
+ai/__pycache__/
+__pycache__/
+*.pyc
+# Model files (too large for git)
+ai/model/*.gguf

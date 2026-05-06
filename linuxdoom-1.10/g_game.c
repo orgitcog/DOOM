@@ -70,6 +70,10 @@ rcsid[] = "$Id: g_game.c,v 1.8 1997/02/03 22:45:09 b1 Exp $";
 
 #include "g_game.h"
 
+#ifdef DOOM_AI_PLAYER
+#include "ai_player.h"
+#endif
+
 
 #define SAVEGAMESIZE	0x2c000
 #define SAVESTRINGSIZE	24
@@ -434,6 +438,14 @@ void G_BuildTiccmd (ticcmd_t* cmd)
 	sendsave = false; 
 	cmd->buttons = BT_SPECIAL | BTS_SAVEGAME | (savegameslot<<BTS_SAVESHIFT); 
     } 
+
+#ifdef DOOM_AI_PLAYER
+    // AI Player Override: replace human input with AI-generated commands
+    if (AI_IsControlling(consoleplayer))
+    {
+	AI_BuildTiccmd(cmd, consoleplayer);
+    }
+#endif
 } 
  
 
